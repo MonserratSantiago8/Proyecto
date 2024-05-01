@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACAENCARGOS - Papelería y Tiendita</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <img src="logo-acatodo.png" alt="Logo AcaTodo" id="logo">
+        <div id="icono-notificaciones">🔔</div>
+    </header>
+    <main>
+        <section id="papeleria">
+            <h2>Papelería</h2>
+            <ul>
+                <!-- Artículo de Lápices con controles para agregar o quitar -->
+                <li class="articulo">
+                    <span>Lápices</span>
+                    <div class="controles-cantidad">
+                        <button type="button" onclick="cambiarCantidad('lapices', -1)">-</button>
+                        <input type="number" id="cantidad-lapices" value="0" min="0">
+                        <button type="button" onclick="cambiarCantidad('lapices', 1)">+</button>
+                    </div>
+                </li>
+                <!-- Artículo de Plumas -->
+                <li class="articulo">
+                    <span>Plumas</span>
+                    <div class="controles-cantidad">
+                        <button type="button" onclick="cambiarCantidad('plumas', -1)">-</button>
+                        <input type="number" id="cantidad-plumas" value="0" min="0">
+                        <button type="button" onclick="cambiarCantidad('plumas', 1)">+</button>
+                    </div>
+                </li>
+                <!-- Artículo de Goma -->
+                <li class="articulo">
+                    <span>Goma</span>
+                    <div class="controles-cantidad">
+                        <button type="button" onclick="cambiarCantidad('goma', -1)">-</button>
+                        <input type="number" id="cantidad-goma" value="0" min="0">
+                        <button type="button" onclick="cambiarCantidad('goma', 1)">+</button>
+                    </div>
+                </li>
+                <!-- Artículo de Libreta -->
+                <li class="articulo">
+                    <span>Libreta</span>
+                    <div class="controles-cantidad">
+                        <button type="button" onclick="cambiarCantidad('libreta', -1)">-</button>
+                        <input type="number" id="cantidad-libreta" value="0" min="0">
+                        <button type="button" onclick="cambiarCantidad('libreta', 1)">+</button>
+                    </div>
+                </li>
+                <!-- Artículo de Sacapuntas -->
+                <li class="articulo">
+                    <span>Sacapuntas</span>
+                    <div class="controles-cantidad">
+                        <button type="button" onclick="cambiarCantidad('sacapuntas', -1)">-</button>
+                        <input type="number" id="cantidad-sacapuntas" value="0" min="0">
+                        <button type="button" onclick="cambiarCantidad('sacapuntas', 1)">+</button>
+                    </div>
+                </li>
+                <!-- Artículo de Plumones -->
+                <li class="articulo">
+                    <span>Plumones</span>
+                    <div class="controles-cantidad">
+                        <button type="button" onclick="cambiarCantidad('plumones', -1)">-</button>
+                        <input type="number" id="cantidad-plumones" value="0" min="0">
+                        <button type="button" onclick="cambiarCantidad('plumones', 1)">+</button>
+                    </div>
+                </li>
+                <!-- Artículo de Tijeras -->
+                <li class="articulo">
+                    <span>Tijeras</span>
+                    <div class="controles-cantidad">
+                        <button type="button" onclick="cambiarCantidad('tijeras', -1)">-</button>
+                        <input type="number" id="cantidad-tijeras" value="0" min="0">
+                        <button type="button" onclick="cambiarCantidad('tijeras', 1)">+</button>
+                    </div>
+                </li>
+                <!-- Artículo de Pritt -->
+                <ul>
+                    <!-- Artículos existentes -->
+                    <li class="articulo">
+                        <span>Pritt</span>
+                        <div class="controles-cantidad">
+                            <button type="button" onclick="cambiarCantidad('pritt', -1)">-</button>
+                            <input type="number" id="cantidad-pritt" value="0" min="0">
+                            <button type="button" onclick="cambiarCantidad('pritt', 1)">+</button>
+                        </div>
+                    </li>
+                </ul>
+                <button type="button" id="boton-comprar" style="margin-top: 20px;">Comprar</button>
+            </section>
+        </main>
+        <footer>
+            <!-- Contenido del footer si es necesario -->
+        </footer>
+        <script src="Acatodo.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                window.cambiarCantidad = function(articulo, cambio) {
+                    var inputCantidad = document.getElementById('cantidad-' + articulo);
+                    var nuevaCantidad = parseInt(inputCantidad.value, 10) + cambio;
+                    if (nuevaCantidad < 0) {
+                        nuevaCantidad = 0;
+                    }
+                    inputCantidad.value = nuevaCantidad;
+                };
+           
+                document.getElementById('boton-comprar').addEventListener('click', function() {
+                    alert('Orden enviada.');
+                });
+            });
+            </script>
+           
+
+    </body>
+    </html>
